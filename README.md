@@ -43,13 +43,29 @@ cd wonderweather-frontend
 npm install
 ```
 
-3. Run the development server:
+3. Create a `.env.local` file in the root directory and add your Weather API credentials:
+
+```env
+NEXT_PUBLIC_WEATHER_API_BASE_URL="https://api.weatherapi.com/v1/current.json"
+NEXT_PUBLIC_WEATHER_API_KEY="your-api-key-here"
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## 🔑 Getting an API Key
+
+This application uses the [Weather API](https://www.weatherapi.com/). To get your free API key:
+
+1. Visit [https://www.weatherapi.com/](https://www.weatherapi.com/)
+2. Sign up for a free account
+3. Generate your API key
+4. Add it to your `.env.local` file
 
 ## 📸 Screenshots
 
