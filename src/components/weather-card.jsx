@@ -1,10 +1,10 @@
 import React from "react";
-import { useWeatherData } from "@/hooks/useWeatherData";
+import { useWeatherData } from "@/hooks/use-weather-data";
 import AirIcon from "@mui/icons-material/Air";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-const WeatherCard = () => {
+export const WeatherCard = () => {
   const { weatherData, loading, error } = useWeatherData();
 
   if (loading) {
@@ -83,5 +83,3 @@ const WeatherCard = () => {
     </div>
   );
 };
-
-export default WeatherCard;

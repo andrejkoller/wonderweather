@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import { useWeatherData } from "@/hooks/useWeatherData";
+import { useWeatherData } from "@/hooks/use-weather-data";
 import MenuIcon from "@mui/icons-material/Menu";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
 import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
-import Menu from "./Menu";
+import { Menu } from "./menu";
 import { usePathname } from "next/navigation";
 
-const Header = ({ cityName }) => {
+export const Header = ({ cityName }) => {
   const { weatherData, loading, error } = useWeatherData();
   const pathname = usePathname();
 
@@ -64,5 +64,3 @@ const Header = ({ cityName }) => {
     </div>
   );
 };
-
-export default Header;

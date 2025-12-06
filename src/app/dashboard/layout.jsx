@@ -1,11 +1,11 @@
 "use client";
 
-import Header from "@/components/Header";
+import { Header } from "@/components/header";
 import React from "react";
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme } from "@/hooks/use-theme";
 import { useEffect, useState } from "react";
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   useTheme();
   const [cityName, setCityName] = useState("New York");
 
@@ -33,6 +33,4 @@ const Layout = ({ children }) => {
       <div className="d-body">{children}</div>
     </div>
   );
-};
-
-export default Layout;
+}

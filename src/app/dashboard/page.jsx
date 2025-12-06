@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import WeatherCard from "./WeatherCard";
-import useFontSize from "@/hooks/useFontSize";
+import { WeatherCard } from "@/components/weather-card";
+import { useFontSize } from "@/hooks/use-font-size";
 
-const Dashboard = () => {
+export default function Page() {
   useFontSize();
 
   return (
@@ -14,6 +14,4 @@ const Dashboard = () => {
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}

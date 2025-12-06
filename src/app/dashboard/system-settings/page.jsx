@@ -1,7 +1,7 @@
 "use client";
 
-import Theme from "@/components/Theme";
-import FontSize from "@/components/FontSize";
+import { ThemeChange } from "@/components/theme-change";
+import { FontSizeChange } from "@/components/font-size-change";
 
 const Page = () => {
   return (

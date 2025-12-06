@@ -3,7 +3,7 @@
 import { Button } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-const Home = () => {
+export default function Home() {
   const router = useRouter();
 
   return (
@@ -29,6 +29,4 @@ const Home = () => {
       </div>
     </div>
   );
-};
-
-export default Home;
+}

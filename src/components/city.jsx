@@ -5,7 +5,7 @@ import { Button, FormControl, Input } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const City = () => {
+export const City = () => {
   const router = useRouter();
   const [cityName, setCityName] = useState("");
 
@@ -46,5 +46,3 @@ const City = () => {
     </div>
   );
 };
-
-export default City;

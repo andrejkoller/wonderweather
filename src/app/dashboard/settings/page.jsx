@@ -1,8 +1,8 @@
 "use client";
 
-import City from "@/components/City";
+import { City } from "@/components/city";
 
-const Page = () => {
+export default function Page() {
   return (
     <div className="flex flex-col justify-start items-center h-full w-full">
       <div className="page-title flex flex-col justify-center items-start">
@@ -16,6 +16,4 @@ const Page = () => {
       </div>
     </div>
   );
-};
-
-export default Page;
+}

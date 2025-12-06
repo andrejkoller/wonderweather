@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const useFontSize = () => {
+export const useFontSize = () => {
   const [fontSize, setFontSize] = useState("small");
   const [isClient, setIsClient] = useState(false);
 
@@ -48,5 +48,3 @@ const useFontSize = () => {
 
   return [fontSize, setSmallFontSize, setMediumFontSize, setLargeFontSize];
 };
-
-export default useFontSize;

@@ -1,13 +1,13 @@
 "use client";
 
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme } from "@/hooks/use-theme";
 import { Button } from "@mui/material";
 import BoltIcon from "@mui/icons-material/Bolt";
 import SunnyIcon from "@mui/icons-material/WbSunny";
 import CloudIcon from "@mui/icons-material/Cloud";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 
-const Theme = () => {
+export const ThemeChange = () => {
   const { theme, setLightTheme, setSunTheme, setSkyTheme, setMoonTheme } =
     useTheme();
 
@@ -85,5 +85,3 @@ const Theme = () => {
     </div>
   );
 };
-
-export default Theme;

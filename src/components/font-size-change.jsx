@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import useFontSize from "@/hooks/useFontSize";
+import { useFontSize } from "@/hooks/use-font-size";
 
-const FontSize = () => {
+export const FontSizeChange = () => {
   const [fontSize, setSmallFontSize, setMediumFontSize, setLargeFontSize] =
     useFontSize();
 
@@ -69,5 +69,3 @@ const FontSize = () => {
     </div>
   );
 };
-
-export default FontSize;
