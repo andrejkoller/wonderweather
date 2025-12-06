@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./styles/globals.css";
+import { Header } from "@/components/header";
+import ClientLayout from "./client-layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,15 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "WonderWeather",
   description: "A weather app that shows the current weather in your city.",
+  icons: {
+    icon: "/icons/weather.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-11/12 m-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased m-auto`}
       >
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

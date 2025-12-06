@@ -1,65 +1,31 @@
 "use client";
 
-import React from "react";
-import { useWeatherData } from "@/hooks/use-weather-data";
 import MenuIcon from "@mui/icons-material/Menu";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
-import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
-import { Menu } from "./menu";
+import SettingsIcon from "@mui/icons-material/Settings";
 import { usePathname } from "next/navigation";
 
-export const Header = ({ cityName }) => {
-  const { weatherData, loading, error } = useWeatherData();
+export const ICON_SIZE = 40;
+
+export const Header = ({ cityName, onMenuOpenClick }) => {
   const pathname = usePathname();
 
-  const handleMenuOpenClick = () => {
-    const menu = document.querySelector(".menu");
-    menu.classList.add("open");
-  };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!weatherData) {
-    return <div>No weather data available</div>;
-  }
+  const isDashboardPage = pathname === "/dashboard";
+  const isSettingsPage = pathname === "/settings";
 
   return (
-    <div className="flex flex-row">
-      <div className="menu h-screen w-full">
-        <Menu />
+    <div className="flex flex-row justify-between items-center h-24 w-full">
+      <div id="menuIcon" className="cursor-pointer" onClick={onMenuOpenClick}>
+        <MenuIcon sx={{ fontSize: ICON_SIZE }} />
       </div>
-      <div className="flex flex-col justify-between items-center h-24 w-full">
-        <div className="flex flex-row justify-between items-center h-full w-full">
-          <div
-            id="menuIcon"
-            className="flex flex-row justify-start items-center cursor-pointer"
-            onClick={handleMenuOpenClick}
-          >
-            <MenuIcon />
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <h2 className="loc-name-font font-bold">
-              {pathname === "/dashboard" && cityName}
-            </h2>
-          </div>
-          <div
-            id="pathNameIcon"
-            className="flex flex-row justify-start items-center cursor-pointer"
-          >
-            {pathname === "/dashboard" && <LocationOnIcon />}
-            {pathname === "/dashboard/settings" && <AppSettingsAltIcon />}
-            {pathname === "/dashboard/system-settings" && (
-              <DisplaySettingsIcon />
-            )}
-          </div>
-        </div>
+      <div className="flex flex-col justify-center items-center">
+        <h2 className="text-2xl font-bold">
+          {isDashboardPage && cityName} {isSettingsPage && "Settings"}
+        </h2>
+      </div>
+      <div id="pathNameIcon">
+        {isDashboardPage && <LocationOnIcon sx={{ fontSize: ICON_SIZE }} />}
+        {isSettingsPage && <SettingsIcon sx={{ fontSize: ICON_SIZE }} />}
       </div>
     </div>
   );

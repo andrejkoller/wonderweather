@@ -1,7 +1,7 @@
 "use client";
 
-import { useTheme } from "@/hooks/use-theme";
-import { Button } from "@mui/material";
+import { useTheme } from "@/contexts/theme-context";
+import { SettingsButton } from "@/components/settings-button";
 import BoltIcon from "@mui/icons-material/Bolt";
 import SunnyIcon from "@mui/icons-material/WbSunny";
 import CloudIcon from "@mui/icons-material/Cloud";
@@ -11,76 +11,27 @@ export const ThemeChange = () => {
   const { theme, setLightTheme, setSunTheme, setSkyTheme, setMoonTheme } =
     useTheme();
 
-  const handleThemeChange = (selectedTheme) => {
-    switch (selectedTheme) {
-      case "light-theme":
-        setLightTheme();
-        break;
-      case "sun-theme":
-        setSunTheme();
-        break;
-      case "sky-theme":
-        setSkyTheme();
-        break;
-      case "moon-theme":
-        setMoonTheme();
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
-    <div className="flex flex-col justify-center items-center border-3 rounded-b-sm rounded-t-sm p-3 h-24 w-full">
+    <div className="flex flex-col justify-center items-center w-full">
       <div className="flex flex-row justify-between items-center w-full">
-        <Button
-          sx={{
-            backgroundColor: "var(--foreground)",
-            color: "var(--background)",
-            padding: "15px 25px",
-          }}
-          variant="contained"
-          disabled={theme === "light-theme" ? true : false}
-          onClick={() => handleThemeChange("light-theme")}
+        <SettingsButton
+          disabled={theme === "light-theme"}
+          onClick={setLightTheme}
         >
           <BoltIcon />
-        </Button>
-        <Button
-          sx={{
-            backgroundColor: "var(--foreground)",
-            color: "var(--background)",
-            padding: "15px 25px",
-          }}
-          variant="contained"
-          disabled={theme === "sun-theme" ? true : false}
-          onClick={() => handleThemeChange("sun-theme")}
-        >
+        </SettingsButton>
+        <SettingsButton disabled={theme === "sun-theme"} onClick={setSunTheme}>
           <SunnyIcon />
-        </Button>
-        <Button
-          sx={{
-            backgroundColor: "var(--foreground)",
-            color: "var(--background)",
-            padding: "15px 25px",
-          }}
-          variant="contained"
-          disabled={theme === "sky-theme" ? true : false}
-          onClick={() => handleThemeChange("sky-theme")}
-        >
+        </SettingsButton>
+        <SettingsButton disabled={theme === "sky-theme"} onClick={setSkyTheme}>
           <CloudIcon />
-        </Button>
-        <Button
-          sx={{
-            backgroundColor: "var(--foreground)",
-            color: "var(--background)",
-            padding: "15px 25px",
-          }}
-          variant="contained"
-          disabled={theme === "moon-theme" ? true : false}
-          onClick={() => handleThemeChange("moon-theme")}
+        </SettingsButton>
+        <SettingsButton
+          disabled={theme === "moon-theme"}
+          onClick={setMoonTheme}
         >
           <BedtimeIcon />
-        </Button>
+        </SettingsButton>
       </div>
     </div>
   );

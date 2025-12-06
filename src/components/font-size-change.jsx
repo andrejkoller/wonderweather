@@ -1,7 +1,7 @@
-import { Button } from "@mui/material";
+import { SettingsButton } from "@/components/settings-button";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useFontSize } from "@/hooks/use-font-size";
+import { useFontSize } from "@/contexts/font-size-context";
 
 export const FontSizeChange = () => {
   const [fontSize, setSmallFontSize, setMediumFontSize, setLargeFontSize] =
@@ -34,38 +34,20 @@ export const FontSizeChange = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between items-center border-3 rounded-b-sm rounded-t-sm p-3 h-24 w-full">
-      <div>
-        <Button
-          sx={{
-            backgroundColor: "var(--foreground)",
-            color: "var(--background)",
-            padding: "15px 25px",
-          }}
-          variant="contained"
-          disabled={fontSize === "small" ? true : false}
-          onClick={handleDecreaseFontSize}
-        >
-          <RemoveIcon />
-        </Button>
-      </div>
-      <div>
-        <p className="text-lg font-bold">{fontSize}</p>
-      </div>
-      <div>
-        <Button
-          sx={{
-            backgroundColor: "var(--foreground)",
-            color: "var(--background)",
-            padding: "15px 25px",
-          }}
-          variant="contained"
-          disabled={fontSize === "large" ? true : false}
-          onClick={handleIncreaseFontSize}
-        >
-          <AddIcon />
-        </Button>
-      </div>
+    <div className="flex flex-row justify-between items-center w-full">
+      <SettingsButton
+        disabled={fontSize === "small"}
+        onClick={handleDecreaseFontSize}
+      >
+        <RemoveIcon />
+      </SettingsButton>
+      <p className="text-lg font-bold">{fontSize}</p>
+      <SettingsButton
+        disabled={fontSize === "large"}
+        onClick={handleIncreaseFontSize}
+      >
+        <AddIcon />
+      </SettingsButton>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Button, FormControl, Input } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -10,14 +9,13 @@ export const City = () => {
   const [cityName, setCityName] = useState("");
 
   const handleCityName = () => {
-    setCityName(cityName);
     localStorage.setItem("cityName", cityName);
     window.dispatchEvent(new Event("storage"));
     router.push("/dashboard");
   };
 
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full">
+    <div className="flex flex-col justify-between items-center gap-4 h-full w-full">
       <div className="h-full w-full">
         <FormControl className="w-full">
           <Input
@@ -26,19 +24,32 @@ export const City = () => {
             name="cityName"
             value={cityName}
             onChange={(e) => setCityName(e.target.value)}
-            placeholder="Enter city name"
-            className="border rounded-md my-2 p-2 w-full"
+            placeholder="Enter a city name"
+            sx={{
+              margin: 0,
+              padding: "8px",
+              borderWidth: 3,
+              borderColor: "var(--foreground)",
+              borderRadius: "4px",
+              "&:before": { borderBottom: "none" },
+              "&:after": { borderBottom: "none" },
+              "&:hover:not(.Mui-disabled):before": { borderBottom: "none" },
+              "&::placeholder": { color: "var(--foreground)" },
+            }}
           />
-          <span className="text-sm text-gray-500">
-            Type the name of the city you want to search for.
-          </span>
         </FormControl>
       </div>
-      <div className="button-container mb-8 w-full">
+      <div className="w-full">
         <Button
           variant="contained"
-          className="s-btn w-full"
-          onClick={() => handleCityName()}
+          className="w-full"
+          sx={{
+            backgroundColor: "var(--foreground)",
+            color: "var(--background)",
+            fontFamily: "Geist",
+            fontSize: "16px",
+          }}
+          onClick={handleCityName}
         >
           Submit
         </Button>
