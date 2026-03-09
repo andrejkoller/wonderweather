@@ -4,24 +4,24 @@ A modern, responsive weather dashboard application built with Next.js 15 and Rea
 
 ## ✨ Features
 
-- **Real-Time Weather Data:** Get current weather conditions for any city worldwide using the WeatherAPI
-- **Multiple Theme Options:** Choose from 4 distinct themes:
+- Real-Time Weather Data: Get current weather conditions for any city worldwide using the WeatherAPI
+- Multiple Theme Options: Choose from 4 distinct themes:
   - ⚡ Light Theme (Default)
   - ☀️ Sun Theme
   - ☁️ Sky Theme
   - 🌙 Moon Theme
-- **Adjustable Font Sizes:** Customize text size for better accessibility (Small, Medium, Large, Extra Large)
-- **Responsive Design:** Optimized for desktop, tablet, and mobile devices
-- **Dashboard Layout:** Organized navigation with settings and system settings pages
-- **Persistent Preferences:** Your theme and font size choices are saved in local storage
+- Adjustable Font Sizes: Customize text size for better accessibility (Small, Medium, Large, Extra Large)
+- Responsive Design: Optimized for desktop, tablet, and mobile devices
+- Dashboard Layout: Organized navigation with settings and system settings pages
+- Persistent Preferences: Your theme and font size choices are saved in local storage
 
 ## 🛠️ Technologies Used
 
-- **Next.js** - React framework with App Router
-- **React** - UI library
-- **Material-UI** - Component library for beautiful UI elements
-- **Tailwind CSS** - Utility-first CSS framework
-- **WeatherAPI** - Real-time weather data provider
+- Next.js - React framework with App Router
+- React - UI library
+- Material-UI - Component library for beautiful UI elements
+- Tailwind CSS - Utility-first CSS framework
+- WeatherAPI - Real-time weather data provider
 
 ## 📋 Prerequisites
 
