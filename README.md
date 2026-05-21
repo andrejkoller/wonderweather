@@ -1,4 +1,4 @@
-# wonderweather frontend
+# wonderweather
 
 A modern, responsive weather dashboard application built with Next.js 15 and React 19. WonderWeather provides real-time weather information with a beautiful, customizable interface that adapts to your preferences.
 
